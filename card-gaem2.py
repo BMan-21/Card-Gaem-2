@@ -52,4 +52,5 @@ while True:
         packanim(red)
     else:
         print()
+#vNA
 
