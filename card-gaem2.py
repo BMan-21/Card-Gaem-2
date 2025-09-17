@@ -1,4 +1,5 @@
 from time import sleep
+from random import randint
 #(i) prefix 3 for text, 4 for bg, 9 for bright text, 10 for bright bg
 #(i) \x1b[38;2;r;g;bm for rgb Text, \x1b[48;2;r;g;bm for rgb Background
 #(i) \x1b[38;5;___m for 256 Text\x1b[48;5;___m for 256 Background, https://jakob-bagterp.github.io/colorist-for-python/ansi-escape-codes/extended-256-colors/#structure for all 256
@@ -26,6 +27,8 @@ blackbg = "\x1b[40m"
 reset = "\x1b[0m"
 print(red + "Welcome" + orange + " to" + yellow + " card" + green + " gaem" + blue + " 2" + reset)
 print("nothing yet!")
+money = 10
+binder = []
 def packanim(color):
     print(color)
     print(" ______________ ")
@@ -314,29 +317,54 @@ def packanim(color):
 while True:
     menu = input("1. shop - 2. binder: ")
     if menu == "1":
-        print("test animation:")
-        sleep(0.5)
-        packanim(red)
-        sleep(0.1)
-        print(green + " ______________ ")
-        print(green + "/" + yellow + "______________2" + green + "\\")
-        print(yellow + "/             \\")
-        print(red + "|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|              |")
-        print("|______________|")
-        print(reset)
-        sleep(0.5)
-        print("idk yet!")
+        pack = input("what pack do you want to open? 1. base pack (10 money)")
+        if pack == "1":
+            if money >= 10:
+                money -= 10
+                #pack stuff
+                print("opening pack...")
+                card1 = randint(1,100)
+                card2 = randint(1,100)
+                cards = [card1, card2]
+                colors = []
+                for c in cards:
+                    if c <= 75:
+                        binder.append("common")
+                        colors.append(blue)
+                    elif c > 75 and c <= 100:
+                        binder.append("uncommon")
+                        colors.append(green)
+                print(card1)
+                packanim(reset)
+                sleep(0.1)
+                print(colors[1] + " ______________ ")
+                print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
+                print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                print(reset + "|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|              |")
+                print("|______________|")
+                sleep(0.5)
+                print("you got:")
+                #(v) replace with something more efficient later
+                for c in cards:
+                    if c <= 75:
+                        print(blue + "common")
+                    elif c > 75 and c <= 100:
+                        print(green + "uncommon")
+            else:
+                print("u really broke")
+        else:
+            print("typo, anyone?")
     elif menu == "2":
         print("no")
     else:
