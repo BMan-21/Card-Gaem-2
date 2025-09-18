@@ -342,12 +342,8 @@ while True:
                             binder.append("uncommon")
                             colors.append(green)
                     #card animation
-<<<<<<< Updated upstream
-                    #(!) sort cards
-                    #(!) reveal 1 at a time
-=======
                     #copy legacy sort code
->>>>>>> Stashed changes
+                    #and modify to maek work
                     print(card1)
                     packanim(reset)
                     sleep(0.1)
