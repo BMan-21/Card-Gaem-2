@@ -479,5 +479,5 @@ while True:
                 print("error")
     elif menu != "1" and menu != "2" and menu != "3":
         print("bro cant type numbers")
-#vNA
+#v 0.0.0 pre-release
 
