@@ -342,6 +342,8 @@ while True:
                             binder.append("uncommon")
                             colors.append(green)
                     #card animation
+                    #(!) sort cards
+                    #(!) reveal 1 at a time
                     print(card1)
                     packanim(reset)
                     sleep(0.1)
