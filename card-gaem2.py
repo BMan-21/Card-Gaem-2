@@ -320,7 +320,7 @@ while True:
     if menu == "1":
         shop = input("1. buy packs - 2. sell cards: ")
         if shop == "1":
-            pack = input("what pack do you want to open? 1. base pack (10 money), " + red + "2. booster pack (coming soon!)" + reset + "you have " + yellow + str(money) + reset + " money: ")
+            pack = input("what pack do you want to open? 1. base pack (10 money), " + red + "2. booster pack (coming soon!) " + reset + "you have " + yellow + str(money) + reset + " money: ")
             if pack == "1":
                 #base pack
                 if money >= 10:
