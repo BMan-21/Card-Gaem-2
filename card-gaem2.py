@@ -315,25 +315,31 @@ def packanim(color):
     print("|              |")
     print("|______________|")    
 while True:
-    menu = input("1. shop - 2. binder: ")
+    print("you have " + str(money) + " money")
+    menu = input("1. shop - 2. binder - 3. shop (no shop yet so dont type 3 ok?, i warned you): ")
     if menu == "1":
-        pack = input("what pack do you want to open? 1. base pack (10 money)")
+        pack = input("what pack do you want to open? 1. base pack (10 money), you have" + str(money) + "money: ")
         if pack == "1":
+            #base pack
             if money >= 10:
                 money -= 10
-                #pack stuff
+            #(v) pack stuff
                 print("opening pack...")
+                #(v) find cards
                 card1 = randint(1,100)
                 card2 = randint(1,100)
                 cards = [card1, card2]
                 colors = []
                 for c in cards:
+                    #(v) common (75%)
                     if c <= 75:
-                        binder.append("common")
+                        binder.append(blue + "common")
                         colors.append(blue)
+                    #(v) uncommon (25%)
                     elif c > 75 and c <= 100:
-                        binder.append("uncommon")
+                        binder.append(green + "uncommon")
                         colors.append(green)
+                #card animation
                 print(card1)
                 packanim(reset)
                 sleep(0.1)
@@ -358,16 +364,45 @@ while True:
                 #(v) replace with something more efficient later
                 for c in cards:
                     if c <= 75:
-                        print(blue + "common")
+                        print("common")
                     elif c > 75 and c <= 100:
-                        print(green + "uncommon")
+                        print("uncommon")
             else:
                 print("u really broke")
-        else:
+        #booster pack
+        if pack == "2":
+            if money >= 15:
+                money -= 15
+                print("imma maek shop first sry")
+            else:
+                print("u kinda broke")
+
+        elif pack != "1" and pack != "2":
             print("typo, anyone?")
     elif menu == "2":
-        print("no")
-    else:
-        print()
+        print("you have " + str(len(binder)) + " cards in your binder")
+        print("you have" + str(money) + " money")
+        for c in binder:
+            if c == "common":
+                print(blue + c + reset)
+            elif c == "uncommon":
+                print(green + c + reset)
+            elif c == "rare":
+                print(cyan + c + reset)
+            elif c == "epic":
+                print(orange + c + reset)
+            elif c == "legendary":
+                print(yellow + c + reset)
+            elif c == "mythic":
+                print(red + c + reset)
+            elif c == "godlike":
+                print(magenta + c + reset)
+    elif menu == "3":
+        print("no shop yet, i literally told you that sowhydidyputype3cuzISAIDYOUSHOULDNTTYPE3SONOWIMMADANDIWILLPUNISHYOUFORYOURACTIONTHISISWHATYOUDESERVED")
+        sleep(2)
+        print("lol")
+        exit()
+    elif menu != "1" and menu != "2" and menu != "3":
+        print("bro cant type letters")
 #vNA
 
