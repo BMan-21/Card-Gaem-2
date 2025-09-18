@@ -331,6 +331,7 @@ while True:
                     card1 = randint(1,100)
                     card2 = randint(1,100)
                     cards = [card1, card2]
+                    cards.sort()
                     colors = []
                     for c in cards:
                         #(v) common (75%)
