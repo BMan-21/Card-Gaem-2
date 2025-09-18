@@ -1,7 +1,7 @@
 # ------------Card Gaem 2------------
 a lil python project about cards\
 **Card Gaem 2 is in early development, there is no usable product currently**\
-card gaem (legacy) is og card gaem repo might be made, idk\
+card-gaem-legacy.py is og card gaem\
 version: 0.0.0 pre-release
 # ------------How to download------------
 **do not download card-gaem2-development.py!**
