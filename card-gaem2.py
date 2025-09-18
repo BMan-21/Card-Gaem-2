@@ -347,7 +347,23 @@ while True:
                     #and modify to maek work
                     print(card1)
                     packanim(reset)
-                    sleep(0.1)
+                    sleep(0.5)
+                    print(colors[0] + " ______________" )
+                    print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                    print(reset + "|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|______________|")
+                    sleep(1)
                     print(colors[1] + " ______________ ")
                     print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
                     print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
@@ -410,7 +426,7 @@ while True:
                     godlike += 1
             sell = input("what card do you want to sell? you have 1. " + str(common) + " common (5 money), 2. " + str(uncommon) + " uncommon (7 money), 3. " + str(rare) + " rare (" + red + "unavailable" + reset + "), 4. " + str(epic) + " epic (" + red + "unavailable" + reset + "), 5. " + str(legendary) + " legendary (" + red + "unavailable" + reset + "), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "), 7. " + str(godlike) + " godlike: " + red + "unavailable" + reset + ": ")
             if sell == "1": #(!) finish pls
-                num = input("how many commons do you want to sell for 6 money each? you have " + str(common) + ": ")
+                num = input("how many commons do you want to sell for 5 money each? you have " + str(common) + ": ")
                 if int(num) > common:
                     print("u cant count")
                     print("sold all ur commons")
@@ -425,6 +441,22 @@ while True:
                         if i == "common" and int(num) > 0:
                             num = int(num) - 1
                             binder.remove("common")
+            elif sell == "2":
+                num = input("how many uncommons do you want to sell for 7 money each? you have " + str(uncommon) + ": ")
+                if int(num) > uncommon:
+                    print("u cant count")
+                    print("sold all ur uncommons")
+                    money += uncommon * 7
+                    for i in binder:
+                        if i == "uncommon":
+                            binder.remove("uncommon")
+                if int(num) <= uncommon:
+                    print("sold " + str(num) + " uncommons")
+                    money += int(num) * 7
+                    for i in binder:
+                        if i == "uncommon" and int(num) > 0:
+                            num = int(num) - 1
+                            binder.remove("uncommon")
 
     elif menu == "2":
         print("you have " + str(len(binder)) + " cards in your binder")
