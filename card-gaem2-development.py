@@ -320,7 +320,7 @@ while True:
     if menu == "1":
         shop = input("1. buy packs - 2. sell cards: ")
         if shop == "1":
-            pack = input("what pack do you want to open? 1. base pack (15 money), 2. booster pack (20 money) you have " + yellow + str(money) + reset + " money: ")
+            pack = input("what pack do you want to open? 1. base pack ("+yellow+"15"+reset+" money), 2. booster pack ("+yellow+"20"+reset+" money), 3. mega pack (" + yellow + "50" + reset + "money) you have " + yellow + str(money) + reset + " money: ")
             if pack == "1":
                 #base pack
                 if money >= 10:
@@ -362,7 +362,7 @@ while True:
                     print("|              |")
                     print("|______________|")
                     sleep(1)
-                    print(colors[1] + " ______________ ")
+                    print(colors[1] + " ______________")
                     print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
                     print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
                     print(reset + "|              |")
@@ -379,8 +379,8 @@ while True:
                     print("|              |")
                     print("|______________|")
                     sleep(1)
-                    print(colors[2] + " ______________ ")
-                    print(colors[2] + "/" + colors[1] + " ______________ " + colors[2] + "\\")
+                    print(colors[2] + " ______________")
+                    print(colors[2] + "/" + colors[1] + "______________" + colors[2] + "\\")
                     print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
                     print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
                     print(reset + "|              |")
@@ -475,6 +475,81 @@ while True:
                             print(green + "uncommon" + reset)
                         elif c > 70 and c <= 100:
                             print(cyan + "rare" + reset)
+            #mega pack
+            elif pack == "3":
+                if money >= 50:
+                    money -= 50
+                    print("opening pack...")
+                    #(v) find cards
+                    card1 = randint(1,100)
+                    card2 = randint(1,100)
+                    card3 = randint(1,100)
+                    card4 = randint(1,100)
+                    card5 = randint(1,100)
+                    card6 = randint(1,100)
+                    cards = [card1, card2, card3, card4, card5, card6]
+                    cards.sort()
+                    colors = []
+                    for c in cards:
+                        #(v) common (30%)
+                        if c <= 30:
+                            binder.append("common")
+                            colors.append(blue)
+                        #(v) uncommon (10%)
+                        elif c > 30 and c <= 40:
+                            binder.append("uncommon")
+                            colors.append(green)
+                        #(v) rare (20%)
+                        elif c > 40 and c <= 60:
+                            binder.append("rare")
+                            colors.append(cyan)
+                        #(v) epic
+                        #(v) legendary
+                    #card animation
+                    packanim(reset)
+                    sleep(0.5)
+                    print(colors[0] + " ______________" )
+                    print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                    print(reset + "|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|______________|")
+                    sleep(1)
+                    print(colors[1] + " ______________ ")
+                    print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
+                    print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                    print(reset + "|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|______________|")
+                    sleep(0.5)
+                    print("you got:")
+                    #(v) replace with something more efficient later
+                    for c in cards:
+                        if c <= 40:
+                            print(blue + "common" + reset)
+                        elif c > 40 and c <= 70:
+                            print(green + "uncommon" + reset)
+                        elif c > 70 and c <= 100:
+                            print(cyan + "rare" + reset)    
                 else:
                     print("u kinda broke")
 
@@ -504,7 +579,7 @@ while True:
                     mythic += 1
                 elif c == "godlike":
                     godlike += 1
-            sell = input("what card do you want to sell? you have 1. " + str(common) + " common (" + yellow "5" + reset + "money), 2. " + str(uncommon) + " uncommon (" + yellow + "7" + reset + "money), 3. " + str(rare) + " rare (" + yellow + "12" + reset + "money), 4. " + str(epic) + " epic (" + red + "unavailable" + reset + "), 5. " + str(legendary) + " legendary (" + red + "unavailable" + reset + "), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "), 7. " + str(godlike) + " godlike: " + red + "unavailable" + reset + ": ")
+            sell = input("what card do you want to sell? you have 1. " + str(common) + " common (" + yellow + "5" + reset + "money), 2. " + str(uncommon) + " uncommon (" + yellow + "7" + reset + "money), 3. " + str(rare) + " rare (" + yellow + "12" + reset + "money), 4. " + str(epic) + " epic (" + red + "unavailable" + reset + "), 5. " + str(legendary) + " legendary (" + red + "unavailable" + reset + "), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "), 7. " + str(godlike) + " godlike: " + red + "unavailable" + reset + ": ")
             if sell == "1": #(!) finish pls
                 num = input("how many commons do you want to sell for 5 money each? you have " + str(common) + ": ")
                 if int(num) > common:
