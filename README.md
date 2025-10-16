@@ -4,5 +4,5 @@ a lil python project about cards\
 card-gaem-legacy.py is og card gaem\
 version: 0.0.0 pre-release\
 # ------------How to download------------
-**download using the latest release under the releases tab on the right side!**\
+**download using the latest release under the releases tab on the right side!**
 
