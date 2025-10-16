@@ -27,7 +27,7 @@ blackbg = "\x1b[40m"
 reset = "\x1b[0m"
 print(red + "Welcome" + orange + " to" + yellow + " card" + green + " gaem" + blue + " 2" + reset)
 print("nothing yet!")
-money = 15
+money = 150
 binder = []
 def packanim(color):
     print(color)
@@ -320,7 +320,7 @@ while True:
     if menu == "1":
         shop = input("1. buy packs - 2. sell cards: ")
         if shop == "1":
-            pack = input("what pack do you want to open? 1. base pack ("+yellow+"15"+reset+" money), 2. booster pack ("+yellow+"20"+reset+" money), 3. mega pack (" + yellow + "50" + reset + "money) you have " + yellow + str(money) + reset + " money: ")
+            pack = input("what pack do you want to open? 1. base pack ("+yellow+"15"+reset+" money), 2. booster pack ("+yellow+"20"+reset+" money), 3. mega pack (" + yellow + "50" + reset + " money) you have " + yellow + str(money) + reset + " money: ")
             if pack == "1":
                 #base pack
                 if money >= 10:
@@ -499,12 +499,18 @@ while True:
                         elif c > 30 and c <= 40:
                             binder.append("uncommon")
                             colors.append(green)
-                        #(v) rare (20%)
-                        elif c > 40 and c <= 60:
+                        #(v) rare (30%)
+                        elif c > 40 and c <= 70:
                             binder.append("rare")
                             colors.append(cyan)
-                        #(v) epic
-                        #(v) legendary
+                        #(v) epic (20%)
+                        elif c > 70 and c <= 90:
+                            binder.append("epic")
+                            colors.append(orange)  
+                        #(v) legendary (10%)
+                        elif c > 90 and c <= 100:
+                            binder.append("legendary")
+                            colors.append(yellow)
                     #card animation
                     packanim(reset)
                     sleep(0.5)
@@ -540,16 +546,98 @@ while True:
                     print("|              |")
                     print("|              |")
                     print("|______________|")
+                    sleep(1)
+                    print(colors[2] + " ______________ ")
+                    print(colors[2] + "/" + colors[1] + "______________" + colors[2] + "\\")
+                    print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
+                    print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                    print(reset + "|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|______________|")
+                    sleep(1)
+                    print(colors[3] + " ______________ ")
+                    print(colors[3] + "/" + colors[2] + "______________" + colors[3] + "\\")
+                    print(colors[2] + "/" + colors[1] + "______________" + colors[2] + "\\")
+                    print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
+                    print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                    print(reset + "|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|______________|")
+                    sleep(1)
+                    print(colors[4] + " ______________ ")
+                    print(colors[4] + "/" + colors[3] + "______________" + colors[4] + "\\")
+                    print(colors[3] + "/" + colors[2] + "______________" + colors[3] + "\\")
+                    print(colors[2] + "/" + colors[1] + "______________" + colors[2] + "\\")
+                    print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
+                    print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                    print(reset + "|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|______________|")
+                    sleep(1)
+                    print(colors[5] + " ______________ ")
+                    print(colors[5] + "/" + colors[4] + "______________" + colors[5] + "\\")
+                    print(colors[4] + "/" + colors[3] + "______________" + colors[4] + "\\")
+                    print(colors[3] + "/" + colors[2] + "______________" + colors[3] + "\\")
+                    print(colors[2] + "/" + colors[1] + "______________" + colors[2] + "\\")
+                    print(colors[1] + "/" + colors[0] + "______________" + colors[1] + "\\")
+                    print(colors[0] + "/" + reset + "______________" + colors[0] + "\\")
+                    print(reset + "|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|              |")
+                    print("|______________|")
                     sleep(0.5)
                     print("you got:")
                     #(v) replace with something more efficient later
                     for c in cards:
-                        if c <= 40:
+                        if c <= 30:
                             print(blue + "common" + reset)
-                        elif c > 40 and c <= 70:
+                        elif c > 30 and c <= 40:
                             print(green + "uncommon" + reset)
-                        elif c > 70 and c <= 100:
-                            print(cyan + "rare" + reset)    
+                        elif c > 40 and c <= 70:
+                            print(cyan + "rare" + reset)
+                        elif c > 70 and c <= 90:
+                            print(orange + "epic" + reset)  
+                        elif c > 90 and c <= 100:
+                            print(yellow + "legendary" + reset)   
                 else:
                     print("u kinda broke")
 
@@ -579,6 +667,7 @@ while True:
                     mythic += 1
                 elif c == "godlike":
                     godlike += 1
+            #add epic + legendary
             sell = input("what card do you want to sell? you have 1. " + str(common) + " common (" + yellow + "5" + reset + "money), 2. " + str(uncommon) + " uncommon (" + yellow + "7" + reset + "money), 3. " + str(rare) + " rare (" + yellow + "12" + reset + "money), 4. " + str(epic) + " epic (" + red + "unavailable" + reset + "), 5. " + str(legendary) + " legendary (" + red + "unavailable" + reset + "), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "), 7. " + str(godlike) + " godlike: " + red + "unavailable" + reset + ": ")
             if sell == "1": #(!) finish pls
                 num = input("how many commons do you want to sell for 5 money each? you have " + str(common) + ": ")
