@@ -668,7 +668,7 @@ while True:
                 elif c == "godlike":
                     godlike += 1
             #add epic + legendary
-            sell = input("what card do you want to sell? you have 1. " + str(common) + " common (" + yellow + "5" + reset + "money), 2. " + str(uncommon) + " uncommon (" + yellow + "7" + reset + "money), 3. " + str(rare) + " rare (" + yellow + "12" + reset + "money), 4. " + str(epic) + " epic (" + red + "unavailable" + reset + "), 5. " + str(legendary) + " legendary (" + red + "unavailable" + reset + "), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "), 7. " + str(godlike) + " godlike: " + red + "unavailable" + reset + ": ")
+            sell = input("what card do you want to sell? you have 1. " + str(common) + " common (" + yellow + "5" + reset + " money), 2. " + str(uncommon) + " uncommon (" + yellow + "7" + reset + " money), 3. " + str(rare) + " rare (" + yellow + "12" + reset + " money), 4. " + str(epic) + " epic (" + yellow + "15" + reset + " money), 5. " + str(legendary) + " legendary (" + yellow + "20" + reset + " money), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "), 7. " + str(godlike) + " godlike: " + red + "unavailable" + reset + ": ")
             if sell == "1": #(!) finish pls
                 num = input("how many commons do you want to sell for 5 money each? you have " + str(common) + ": ")
                 if int(num) > common:
@@ -717,6 +717,38 @@ while True:
                         if i == "rare" and int(num) > 0:
                             num = int(num) - 1
                             binder.remove("rare")
+            elif sell == "4":
+                num = input("how many epics do you want to sell for 15 money each? you have " + str(rare) + ": ")
+                if int(num) > rare:
+                    print("u cant count")
+                    print("sold all ur epics")
+                    money += rare * 12
+                    for i in binder:
+                        if i == "rare":
+                            binder.remove("epics")
+                if int(num) <= rare:
+                    print("sold " + str(num) + " legendarys")
+                    money += int(num) * 12
+                    for i in binder:
+                        if i == "rare" and int(num) > 0:
+                            num = int(num) - 1
+                            binder.remove("rare")
+            elif sell == "5":
+                num = input("how many legendarys do you want to sell for 20 money each? you have " + str(rare) + ": ")
+                if int(num) > rare:
+                    print("u cant count")
+                    print("sold all ur legendarys")
+                    money += rare * 12
+                    for i in binder:
+                        if i == "rare":
+                            binder.remove("rare")
+                if int(num) <= rare:
+                    print("sold " + str(num) + " legendarys")
+                    money += int(num) * 12
+                    for i in binder:
+                        if i == "rare" and int(num) > 0:
+                            num = int(num) - 1
+                            binder.remove("rare")
 
     elif menu == "2":
         print("you have " + str(len(binder)) + " cards in your binder")
@@ -739,5 +771,5 @@ while True:
                 print("error")
     elif menu != "1" and menu != "2" and menu != "3":
         print("bro cant type numbers")
-#v 0.0.1
+#v 0.1.0
 
