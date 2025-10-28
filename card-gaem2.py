@@ -5,7 +5,6 @@ from random import randint
 #(i) \x1b[38;5;___m for 256 Text\x1b[48;5;___m for 256 Background, https://jakob-bagterp.github.io/colorist-for-python/ansi-escape-codes/extended-256-colors/#structure for all 256
 #(v) the following are text
 red = "\x1b[31m"
-orange = "\x1b[38;5;208m" #(!) not working
 yellow = "\x1b[33m"
 green = "\x1b[32m"
 blue = "\x1b[34m"
@@ -16,7 +15,6 @@ black = "\x1b[30m"
 reset = "\x1b[0m"
 #(v) the following are bgs
 redbg = "\x1b[41m"
-orangebg = "\x1b[48;5;208m" #(!) not working
 yellowbg = "\x1b[43m"
 greenbg = "\x1b[42m"
 bluebg = "\x1b[44m"
@@ -25,9 +23,9 @@ magentabg = "\x1b[45m"
 whitebg = "\x1b[107m"
 blackbg = "\x1b[40m"
 reset = "\x1b[0m"
-print(red + "Welcome" + orange + " to" + yellow + " card" + green + " gaem" + blue + " 2" + reset)
+print(red + "Welcome" + magenta + " to" + yellow + " card" + green + " gaem" + blue + " 2" + reset)
 print("nothing yet!")
-money = 150
+money = 15
 binder = []
 def packanim(color):
     print(color)
@@ -506,7 +504,7 @@ while True:
                         #(v) epic (20%)
                         elif c > 70 and c <= 90:
                             binder.append("epic")
-                            colors.append(orange)  
+                            colors.append(magenta)  
                         #(v) legendary (10%)
                         elif c > 90 and c <= 100:
                             binder.append("legendary")
@@ -635,7 +633,7 @@ while True:
                         elif c > 40 and c <= 70:
                             print(cyan + "rare" + reset)
                         elif c > 70 and c <= 90:
-                            print(orange + "epic" + reset)  
+                            print(magenta + "epic" + reset)  
                         elif c > 90 and c <= 100:
                             print(yellow + "legendary" + reset)   
                 else:
@@ -651,7 +649,6 @@ while True:
             epic = 0
             legendary = 0
             mythic = 0
-            godlike = 0
             for c in binder:
                 if c == "common":
                     common += 1
@@ -665,10 +662,8 @@ while True:
                     legendary += 1
                 elif c == "mythic":
                     mythic += 1
-                elif c == "godlike":
-                    godlike += 1
             #add epic + legendary
-            sell = input("what card do you want to sell? you have 1. " + str(common) + " common (" + yellow + "5" + reset + " money), 2. " + str(uncommon) + " uncommon (" + yellow + "7" + reset + " money), 3. " + str(rare) + " rare (" + yellow + "12" + reset + " money), 4. " + str(epic) + " epic (" + yellow + "15" + reset + " money), 5. " + str(legendary) + " legendary (" + yellow + "20" + reset + " money), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "), 7. " + str(godlike) + " godlike: " + red + "unavailable" + reset + ": ")
+            sell = input("what card do you want to sell? you have 1. " + str(common) + " common (" + yellow + "5" + reset + " money), 2. " + str(uncommon) + " uncommon (" + yellow + "7" + reset + " money), 3. " + str(rare) + " rare (" + yellow + "12" + reset + " money), 4. " + str(epic) + " epic (" + yellow + "15" + reset + " money), 5. " + str(legendary) + " legendary (" + yellow + "20" + reset + " money), 6. " + str(mythic) + " mythic (" + red + "unavailable" + reset + "): ")
             if sell == "1": #(!) finish pls
                 num = input("how many commons do you want to sell for 5 money each? you have " + str(common) + ": ")
                 if int(num) > common:
@@ -760,13 +755,11 @@ while True:
             elif c == "rare":
                 print(cyan + c + reset)
             elif c == "epic":
-                print(orange + c + reset)
+                print(magenta + c + reset)
             elif c == "legendary":
                 print(yellow + c + reset)
             elif c == "mythic":
                 print(red + c + reset)
-            elif c == "godlike":
-                print(magenta + c + reset)
             else:
                 print("error")
     elif menu != "1" and menu != "2" and menu != "3":
